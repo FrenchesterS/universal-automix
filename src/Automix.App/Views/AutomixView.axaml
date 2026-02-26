@@ -1,0 +1,49 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controls="clr-namespace:Automix.App.Controls"
+             xmlns:vm="clr-namespace:Automix.App.Views"
+             x:Class="Automix.App.Views.AutomixView">
+  <UserControl.DataContext>
+    <vm:AutomixViewModel/>
+  </UserControl.DataContext>
+
+  <Grid RowDefinitions="Auto,*" Margin="16">
+    <!-- Top bar -->
+    <Border Background="{DynamicResource PanelBg}"
+            BorderBrush="{DynamicResource PanelBorder}" BorderThickness="1"
+            CornerRadius="10" Padding="10">
+      <DockPanel LastChildFill="False">
+        <StackPanel Orientation="Horizontal" Spacing="8" DockPanel.Dock="Left">
+          <ToggleButton Content="All" IsChecked="True"/>
+          <ToggleButton Content="A"/>
+          <ToggleButton Content="B"/>
+          <ToggleButton Content="C"/>
+          <ToggleButton Content="D"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Spacing="8" DockPanel.Dock="Right">
+          <CheckBox Content="Hide inactive" IsChecked="False"/>
+        </StackPanel>
+      </DockPanel>
+    </Border>
+
+    <!-- Channel strips -->
+    <ScrollViewer Grid.Row="1"
+                  HorizontalScrollBarVisibility="Auto"
+                  VerticalScrollBarVisibility="Disabled">
+      <ItemsControl ItemsSource="{Binding Channels}">
+        <ItemsControl.ItemsPanel>
+          <ItemsPanelTemplate>
+            <StackPanel Orientation="Horizontal" Spacing="12"/>
+          </ItemsPanelTemplate>
+        </ItemsControl.ItemsPanel>
+
+        <ItemsControl.ItemTemplate>
+          <DataTemplate>
+            <controls:ChannelStripControl/>
+          </DataTemplate>
+        </ItemsControl.ItemTemplate>
+      </ItemsControl>
+    </ScrollViewer>
+  </Grid>
+</UserControl>

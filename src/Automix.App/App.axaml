@@ -1,0 +1,8 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="Automix.App.App">
+  <Application.Styles>
+    <FluentTheme />
+    <StyleInclude Source="avares://Automix.App/Styles/Theme.Dark.axaml"/>
+  </Application.Styles>
+</Application>

@@ -1,0 +1,11 @@
+C:\Automix\stage0\src\Automix.Infrastructure\bin\Debug\net8.0\Automix.Infrastructure.deps.json
+C:\Automix\stage0\src\Automix.Infrastructure\bin\Debug\net8.0\Automix.Infrastructure.dll
+C:\Automix\stage0\src\Automix.Infrastructure\bin\Debug\net8.0\Automix.Infrastructure.pdb
+C:\Automix\stage0\src\Automix.Infrastructure\obj\Debug\net8.0\Automix.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Automix\stage0\src\Automix.Infrastructure\obj\Debug\net8.0\Automix.Infrastructure.AssemblyInfoInputs.cache
+C:\Automix\stage0\src\Automix.Infrastructure\obj\Debug\net8.0\Automix.Infrastructure.AssemblyInfo.cs
+C:\Automix\stage0\src\Automix.Infrastructure\obj\Debug\net8.0\Automix.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Automix\stage0\src\Automix.Infrastructure\obj\Debug\net8.0\Automix.Infrastructure.dll
+C:\Automix\stage0\src\Automix.Infrastructure\obj\Debug\net8.0\refint\Automix.Infrastructure.dll
+C:\Automix\stage0\src\Automix.Infrastructure\obj\Debug\net8.0\Automix.Infrastructure.pdb
+C:\Automix\stage0\src\Automix.Infrastructure\obj\Debug\net8.0\ref\Automix.Infrastructure.dll

@@ -1,0 +1,47 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="Automix.App.Controls.ChannelStripControl"
+             Width="140">
+  <Border Background="{DynamicResource PanelBg}"
+          BorderBrush="{DynamicResource PanelBorder}"
+          BorderThickness="1"
+          CornerRadius="10"
+          Padding="10">
+    <Grid RowDefinitions="Auto,Auto,Auto,*,Auto">
+      <StackPanel>
+        <TextBlock Text="{Binding ChannelNumber}" FontSize="12" Foreground="{DynamicResource TextDim}"/>
+        <TextBlock Text="{Binding ChannelName}" FontSize="14" FontWeight="SemiBold" TextTrimming="CharacterEllipsis"/>
+      </StackPanel>
+
+      <!-- Group buttons A-D -->
+      <StackPanel Grid.Row="1" Orientation="Horizontal" Spacing="6">
+        <ToggleButton Content="A"/>
+        <ToggleButton Content="B"/>
+        <ToggleButton Content="C"/>
+        <ToggleButton Content="D"/>
+      </StackPanel>
+
+      <!-- Meter -->
+      <Border Grid.Row="2" Height="140" CornerRadius="8" Background="#0B0D12"
+              BorderBrush="{DynamicResource PanelBorder}" BorderThickness="1">
+        <Grid>
+          <Border VerticalAlignment="Bottom" Height="70" Background="{DynamicResource GroupA}" Opacity="0.85"/>
+          <Border VerticalAlignment="Top" Height="40" Background="#000000" Opacity="0.35"/>
+        </Grid>
+      </Border>
+
+      <!-- Priority slider placeholder -->
+      <Border Grid.Row="3" CornerRadius="8" Background="#0B0D12"
+              BorderBrush="{DynamicResource PanelBorder}" BorderThickness="1" Padding="8">
+        <StackPanel Spacing="6">
+          <TextBlock Text="Priority" FontSize="12" Foreground="{DynamicResource TextDim}"/>
+          <Slider Minimum="-12" Maximum="12" Value="0" />
+        </StackPanel>
+      </Border>
+
+      <TextBlock Grid.Row="4" Text="Stage 0"
+                 FontSize="11" Foreground="{DynamicResource TextDim}"
+                 HorizontalAlignment="Center"/>
+    </Grid>
+  </Border>
+</UserControl>

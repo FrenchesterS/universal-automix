@@ -1,0 +1,33 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="Automix.App.Views.SetupView">
+  <Grid RowDefinitions="Auto,Auto,*" Margin="16">
+    <TextBlock Text="Setup (Stage 0)"
+               FontSize="22"
+               FontWeight="SemiBold"/>
+    <Border Grid.Row="1" Background="{DynamicResource PanelBg}"
+            BorderBrush="{DynamicResource PanelBorder}" BorderThickness="1"
+            CornerRadius="10" Padding="12">
+      <StackPanel Spacing="10">
+        <TextBlock Text="Auto-detect: (stub)"
+                   Foreground="{DynamicResource TextDim}"/>
+        <StackPanel>
+          <TextBlock Text="Detected Console: —" />
+          <TextBlock Text="Transport: —" />
+          <TextBlock Text="Audio: —" />
+          <TextBlock Text="Control: —" />
+        </StackPanel>
+        <Button Content="Use detected setup (stub)"/>
+      </StackPanel>
+    </Border>
+
+    <Border Grid.Row="2" Background="{DynamicResource PanelBg}"
+            BorderBrush="{DynamicResource PanelBorder}" BorderThickness="1"
+            CornerRadius="10" Padding="12">
+      <StackPanel Spacing="10">
+        <TextBlock Text="Manual selection (stub)" Foreground="{DynamicResource TextDim}"/>
+        <TextBlock Text="На этапе 1 появится реальный детект и выбор пульта/подключения."/>
+      </StackPanel>
+    </Border>
+  </Grid>
+</UserControl>

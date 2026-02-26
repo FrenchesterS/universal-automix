@@ -1,0 +1,26 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="Automix.App.Views.AdvancedView">
+  <Grid RowDefinitions="Auto,*" Margin="16">
+    <TextBlock Text="Advanced (Stage 0 placeholder)"
+               FontSize="22"
+               FontWeight="SemiBold"/>
+
+    <Border Grid.Row="1" Background="{DynamicResource PanelBg}"
+            BorderBrush="{DynamicResource PanelBorder}" BorderThickness="1"
+            CornerRadius="10" Padding="12">
+      <StackPanel Spacing="12">
+        <TextBlock Text="На этапе 1 сюда добавим реальные параметры: Attack, Release, Max Attenuation, Winner Bias, NOM strength."
+                   TextWrapping="Wrap"/>
+        <StackPanel>
+          <TextBlock Text="Attack (placeholder)"/>
+          <Slider Minimum="0" Maximum="100" Value="10"/>
+        </StackPanel>
+        <StackPanel>
+          <TextBlock Text="Release (placeholder)"/>
+          <Slider Minimum="0" Maximum="1000" Value="300"/>
+        </StackPanel>
+      </StackPanel>
+    </Border>
+  </Grid>
+</UserControl>

@@ -1,0 +1,26 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:Automix.App"
+        xmlns:views="clr-namespace:Automix.App.Views"
+        x:Class="Automix.App.MainWindow"
+        Width="1200" Height="720"
+        Title="Universal Automix (Stage 0)">
+  <Design.DataContext>
+    <vm:MainWindowViewModel/>
+  </Design.DataContext>
+
+  <DockPanel>
+    <!-- Top tabs -->
+    <TabControl SelectedIndex="{Binding SelectedTabIndex}" DockPanel.Dock="Top">
+      <TabItem Header="Setup">
+        <views:SetupView/>
+      </TabItem>
+      <TabItem Header="Automix">
+        <views:AutomixView/>
+      </TabItem>
+      <TabItem Header="Advanced">
+        <views:AdvancedView/>
+      </TabItem>
+    </TabControl>
+  </DockPanel>
+</Window>
