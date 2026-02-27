@@ -9,3 +9,4 @@ C:\Automix\stage0\src\Automix.Domain\obj\Debug\net8.0\Automix.Domain.dll
 C:\Automix\stage0\src\Automix.Domain\obj\Debug\net8.0\refint\Automix.Domain.dll
 C:\Automix\stage0\src\Automix.Domain\obj\Debug\net8.0\Automix.Domain.pdb
 C:\Automix\stage0\src\Automix.Domain\obj\Debug\net8.0\ref\Automix.Domain.dll
+C:\Automix\stage0\src\Automix.Domain\obj\Debug\net8.0\Automix.Domain.sourcelink.json

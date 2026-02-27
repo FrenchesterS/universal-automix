@@ -3,35 +3,44 @@
              xmlns:controls="clr-namespace:Automix.App.Controls"
              xmlns:vm="clr-namespace:Automix.App.Views"
              x:Class="Automix.App.Views.AutomixView">
+
   <UserControl.DataContext>
     <vm:AutomixViewModel/>
   </UserControl.DataContext>
 
   <Grid RowDefinitions="Auto,*" Margin="16">
+
     <!-- Top bar -->
     <Border Background="{DynamicResource PanelBg}"
-            BorderBrush="{DynamicResource PanelBorder}" BorderThickness="1"
-            CornerRadius="10" Padding="10">
+            BorderBrush="{DynamicResource PanelBorder}"
+            BorderThickness="1"
+            CornerRadius="10"
+            Padding="10">
       <DockPanel LastChildFill="False">
         <StackPanel Orientation="Horizontal" Spacing="8" DockPanel.Dock="Left">
-          <ToggleButton Content="All" IsChecked="True"/>
-          <ToggleButton Content="A"/>
-          <ToggleButton Content="B"/>
-          <ToggleButton Content="C"/>
-          <ToggleButton Content="D"/>
+          <ToggleButton x:Name="TabAll" Content="All" IsChecked="True" Click="OnTabClick" Tag="All"/>
+          <ToggleButton x:Name="TabA" Content="A" Click="OnTabClick" Tag="A"/>
+          <ToggleButton x:Name="TabB" Content="B" Click="OnTabClick" Tag="B"/>
+          <ToggleButton x:Name="TabC" Content="C" Click="OnTabClick" Tag="C"/>
+          <ToggleButton x:Name="TabD" Content="D" Click="OnTabClick" Tag="D"/>
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" Spacing="8" DockPanel.Dock="Right">
-          <CheckBox Content="Hide inactive" IsChecked="False"/>
+          <CheckBox Content="Hide inactive"
+                    IsChecked="{Binding HideInactive}"
+                    IsEnabled="{Binding HideInactiveEnabled}"/>
         </StackPanel>
       </DockPanel>
     </Border>
 
     <!-- Channel strips -->
-    <ScrollViewer Grid.Row="1"
+    <ScrollViewer x:Name="ChannelScroll"
+                  Grid.Row="1"
                   HorizontalScrollBarVisibility="Auto"
-                  VerticalScrollBarVisibility="Disabled">
-      <ItemsControl ItemsSource="{Binding Channels}">
+                  VerticalScrollBarVisibility="Disabled"
+                  PointerWheelChanged="OnChannelScrollWheel">
+
+      <ItemsControl ItemsSource="{Binding VisibleChannels}">
         <ItemsControl.ItemsPanel>
           <ItemsPanelTemplate>
             <StackPanel Orientation="Horizontal" Spacing="12"/>
@@ -44,6 +53,7 @@
           </DataTemplate>
         </ItemsControl.ItemTemplate>
       </ItemsControl>
+
     </ScrollViewer>
   </Grid>
 </UserControl>

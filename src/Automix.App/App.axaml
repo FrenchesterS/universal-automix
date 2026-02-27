@@ -1,8 +1,16 @@
 <Application xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Automix.App"
              x:Class="Automix.App.App">
+
+  <Application.Resources>
+  <local:LevelToHeightConverter x:Key="LevelToHeight"/>
+  <local:BoolToBrushConverter x:Key="MutedToBrush"/>
+</Application.Resources>
+
   <Application.Styles>
     <FluentTheme />
     <StyleInclude Source="avares://Automix.App/Styles/Theme.Dark.axaml"/>
+    <!-- Light + MatchConsole добавим позже -->
   </Application.Styles>
 </Application>

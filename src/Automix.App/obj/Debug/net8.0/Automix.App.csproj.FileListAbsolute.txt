@@ -70,3 +70,4 @@ C:\Automix\stage0\src\Automix.App\obj\Debug\net8.0\Automix.App.pdb
 C:\Automix\stage0\src\Automix.App\obj\Debug\net8.0\Automix..CC315C74.Up2Date
 C:\Automix\stage0\src\Automix.App\obj\Debug\net8.0\Automix.App.genruntimeconfig.cache
 C:\Automix\stage0\src\Automix.App\obj\Debug\net8.0\ref\Automix.App.dll
+C:\Automix\stage0\src\Automix.App\obj\Debug\net8.0\Automix.App.sourcelink.json

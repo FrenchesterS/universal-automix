@@ -9,3 +9,4 @@ C:\Automix\stage0\src\Automix.Infrastructure\obj\Debug\net8.0\Automix.Infrastruc
 C:\Automix\stage0\src\Automix.Infrastructure\obj\Debug\net8.0\refint\Automix.Infrastructure.dll
 C:\Automix\stage0\src\Automix.Infrastructure\obj\Debug\net8.0\Automix.Infrastructure.pdb
 C:\Automix\stage0\src\Automix.Infrastructure\obj\Debug\net8.0\ref\Automix.Infrastructure.dll
+C:\Automix\stage0\src\Automix.Infrastructure\obj\Debug\net8.0\Automix.Infrastructure.sourcelink.json

@@ -2,45 +2,90 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="Automix.App.Controls.ChannelStripControl"
              Width="140">
+
   <Border Background="{DynamicResource PanelBg}"
           BorderBrush="{DynamicResource PanelBorder}"
           BorderThickness="1"
           CornerRadius="10"
           Padding="10">
+
     <Grid RowDefinitions="Auto,Auto,Auto,*,Auto">
-      <StackPanel>
+
+      <!-- Header (wheel scroll zone) -->
+      <StackPanel Grid.Row="0">
         <TextBlock Text="{Binding ChannelNumber}" FontSize="12" Foreground="{DynamicResource TextDim}"/>
-        <TextBlock Text="{Binding ChannelName}" FontSize="14" FontWeight="SemiBold" TextTrimming="CharacterEllipsis"/>
+        <TextBlock Text="{Binding Name}"
+                   FontSize="14"
+                   FontWeight="SemiBold"
+                   TextTrimming="CharacterEllipsis"
+                   Foreground="{Binding IsMuted, Converter={StaticResource MutedToBrush}}"/>
       </StackPanel>
 
       <!-- Group buttons A-D -->
-      <StackPanel Grid.Row="1" Orientation="Horizontal" Spacing="6">
-        <ToggleButton Content="A"/>
-        <ToggleButton Content="B"/>
-        <ToggleButton Content="C"/>
-        <ToggleButton Content="D"/>
+      <StackPanel Grid.Row="1" Orientation="Horizontal" Spacing="6" Margin="0,8,0,0">
+        <ToggleButton Content="A" IsChecked="{Binding InA}" ClickMode="Press"/>
+        <ToggleButton Content="B" IsChecked="{Binding InB}" ClickMode="Press"/>
+        <ToggleButton Content="C" IsChecked="{Binding InC}" ClickMode="Press"/>
+        <ToggleButton Content="D" IsChecked="{Binding InD}" ClickMode="Press"/>
       </StackPanel>
 
-      <!-- Meter -->
-      <Border Grid.Row="2" Height="140" CornerRadius="8" Background="#0B0D12"
-              BorderBrush="{DynamicResource PanelBorder}" BorderThickness="1">
+      <!-- Meter (wheel = priority) -->
+      <Border Grid.Row="2"
+              Height="140"
+              Margin="0,8,0,0"
+              CornerRadius="8"
+              Background="#0B0D12"
+              BorderBrush="{DynamicResource PanelBorder}"
+              BorderThickness="1">
+
         <Grid>
-          <Border VerticalAlignment="Bottom" Height="70" Background="{DynamicResource GroupA}" Opacity="0.85"/>
-          <Border VerticalAlignment="Top" Height="40" Background="#000000" Opacity="0.35"/>
+          <!-- Level fill -->
+          <Border VerticalAlignment="Bottom"
+                  Height="{Binding Level, Converter={StaticResource LevelToHeight}, ConverterParameter=140}"
+                  Background="{Binding MeterBrush}"
+                  Opacity="0.90"
+                  PointerWheelChanged="OnMeterWheel"/>
+
+          <!-- Attenuation overlay -->
+          <Border VerticalAlignment="Top"
+                  Height="{Binding Attenuation, Converter={StaticResource LevelToHeight}, ConverterParameter=140}"
+                  Background="#000000"
+                  Opacity="0.35"/>
+
+          <!-- Active talker highlight -->
+          <Border IsVisible="{Binding IsActiveTalker}"
+                  BorderBrush="{Binding MeterBrush}"
+                  BorderThickness="2"
+                  CornerRadius="8"
+                  Opacity="0.35"/>
         </Grid>
       </Border>
 
-      <!-- Priority slider placeholder -->
-      <Border Grid.Row="3" CornerRadius="8" Background="#0B0D12"
-              BorderBrush="{DynamicResource PanelBorder}" BorderThickness="1" Padding="8">
+      <!-- Priority -->
+      <Border Grid.Row="3"
+              Margin="0,8,0,0"
+              CornerRadius="8"
+              Background="#0B0D12"
+              BorderBrush="{DynamicResource PanelBorder}"
+              BorderThickness="1"
+              Padding="8">
         <StackPanel Spacing="6">
-          <TextBlock Text="Priority" FontSize="12" Foreground="{DynamicResource TextDim}"/>
-          <Slider Minimum="-12" Maximum="12" Value="0" />
+          <DockPanel LastChildFill="False">
+            <TextBlock Text="Priority" FontSize="12" Foreground="{DynamicResource TextDim}"/>
+            <TextBlock DockPanel.Dock="Right"
+                       Text="{Binding PriorityDb, StringFormat=0.0 dB}"
+                       FontSize="12"
+                       Foreground="{DynamicResource TextDim}"/>
+          </DockPanel>
+          <Slider Minimum="-12" Maximum="12" Value="{Binding PriorityDb}" />
         </StackPanel>
       </Border>
 
-      <TextBlock Grid.Row="4" Text="Stage 0"
-                 FontSize="11" Foreground="{DynamicResource TextDim}"
+      <TextBlock Grid.Row="4"
+                 Text="Stage 1"
+                 Margin="0,8,0,0"
+                 FontSize="11"
+                 Foreground="{DynamicResource TextDim}"
                  HorizontalAlignment="Center"/>
     </Grid>
   </Border>

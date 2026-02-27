@@ -1,5 +1,6 @@
 <Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
   <Styles.Resources>
     <Color x:Key="Bg">#0F1115</Color>
     <Color x:Key="PanelBg">#151922</Color>
@@ -12,6 +13,12 @@
     <Color x:Key="GroupB">#2ECC71</Color>
     <Color x:Key="GroupC">#F39C12</Color>
     <Color x:Key="GroupD">#9B59B6</Color>
+
+    <!-- Brushes -->
+    <SolidColorBrush x:Key="GroupAColor" Color="{DynamicResource GroupA}"/>
+    <SolidColorBrush x:Key="GroupBColor" Color="{DynamicResource GroupB}"/>
+    <SolidColorBrush x:Key="GroupCColor" Color="{DynamicResource GroupC}"/>
+    <SolidColorBrush x:Key="GroupDColor" Color="{DynamicResource GroupD}"/>
   </Styles.Resources>
 
   <Style Selector="Window">
@@ -30,7 +37,11 @@
     <Setter Property="Padding" Value="10,6"/>
   </Style>
 
-  <Style Selector="Button:pointerover /template/ ContentPresenter">
-    <Setter Property="Opacity" Value="0.9"/>
+  <Style Selector="ToggleButton">
+    <Setter Property="Background" Value="{DynamicResource PanelBg}"/>
+    <Setter Property="BorderBrush" Value="{DynamicResource PanelBorder}"/>
+    <Setter Property="BorderThickness" Value="1"/>
+    <Setter Property="CornerRadius" Value="6"/>
+    <Setter Property="Padding" Value="10,6"/>
   </Style>
 </Styles>

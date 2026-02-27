@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Automix.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+deb216e6ccd27c2b530e73ffa7f83e5490ea66ac")]
 [assembly: System.Reflection.AssemblyProductAttribute("Automix.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Automix.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
